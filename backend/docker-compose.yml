@@ -1,0 +1,4 @@
+environment:
+  POSTGRES_USER: admin
+  POSTGRES_PASSWORD: cybersecret   <-- Check this specific value
+  POSTGRES_DB: cyberme

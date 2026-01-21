@@ -1,0 +1,21 @@
+services:
+  # The Brain: PostgreSQL with Vector Search support
+  db:
+    image: ankane/pgvector:latest
+    container_name: cyberme_db
+    restart: always
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: cybersecret
+      POSTGRES_DB: cyberme
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./database/postgres_data:/var/lib/postgresql/data
+
+  # (Optional) Web Interface to view your data easily
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - "8080:8080"
